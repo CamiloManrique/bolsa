@@ -47,7 +47,3 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 195fe41220ef91217259b303d3e874264303311d

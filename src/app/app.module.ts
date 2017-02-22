@@ -4,13 +4,15 @@ import { MyApp } from './app.component';
 import { HelloIonicPage, LoginForm } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { BienvenidaPage } from '../pages/bienvenida/bienvenida';
 
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage, LoginForm,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    BienvenidaPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,7 +22,8 @@ import { ListPage } from '../pages/list/list';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    BienvenidaPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
