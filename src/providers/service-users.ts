@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http,Headers,RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the ServiceUsers provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class ServiceUsers {
 
@@ -15,15 +10,9 @@ export class ServiceUsers {
 
   constructor(public http: Http) {
     this.data = null;
-    //console.log('Hello ServiceUsers Provider');
   }
 
   verifyUsers(value: any){
-
-   /* if(this.data){
-      return Promise.resolve(this.data);
-    }*/
-
 
     return new Promise(resolve =>{
 
@@ -39,6 +28,24 @@ export class ServiceUsers {
       });
 
       this.http.get('http://localhost/aplicacion/index.php/Data/verificar/'+value,options)
+      .map(res => res.json())
+      .subscribe(data => {
+
+          this.data = data;
+          resolve(this.data);
+
+      });
+
+    });
+
+
+  }
+
+  updateUserStatus(numDocument:any){
+
+    return new Promise(resolve =>{
+
+      this.http.get('http://localhost/aplicacion/index.php/Data/actualizar/0/'+numDocument)
       .map(res => res.json())
       .subscribe(data => {
 
