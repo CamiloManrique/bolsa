@@ -6,6 +6,7 @@ import {Validators} from "../../../node_modules/@angular/forms/src/validators";
 import {FormControl} from "../../../node_modules/@angular/forms/src/model";
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {BienvenidaPage} from '../bienvenida/bienvenida';
+import {ListPage} from '../list/list';
 
 
 function cedulaValidator(control: FormControl): {[s: string]:boolean}{
@@ -43,6 +44,7 @@ function cedulaValidator(control: FormControl): {[s: string]:boolean}{
 export class LoginForm{
   formulario: FormGroup;
   data: any;
+  docu: any;
   isActive: boolean;
   constructor(fb: FormBuilder,private userService:ServiceUsers,public navCtrl: NavController, public alertCtrl: AlertController){
       this.formulario = fb.group({
@@ -63,7 +65,15 @@ export class LoginForm{
           //console.log("No existe este usuario en la base de datos");
           this.userDontExist();
         }else{
+
+          //this.docu = this.data[0].user_dc;
+
+          if(this.data[0].user_st == 1){
+          this.userService.updateUserStatus(value.cedula);
           this.navCtrl.setRoot(BienvenidaPage);
+          }else{
+          this.navCtrl.setRoot(ListPage);
+          }
         }
 
     });
