@@ -3,9 +3,15 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
-
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
+import { HomePage } from '../pages/home/home';
+import { RafflePage } from '../pages/raffle/raffle';
+import { AccountPage } from '../pages/account/account';
+import { TicketsPage } from '../pages/tickets/tickets';
+import { GamePage } from '../pages/game/game';
+import { MarksPage } from '../pages/marks/marks';
+import { PrizesPage } from '../pages/prizes/prizes';
+import { BagPage } from '../pages/bag/bag';
 
 
 @Component({
@@ -26,8 +32,14 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Cerrar Sesión', component: HelloIonicPage },
-      { title: 'Listas', component: ListPage }
+      { title: 'Sorteos', component: RafflePage },
+      { title: 'Opciones', component: AccountPage },
+      { title: 'Boletas', component: TicketsPage },
+      { title: 'Jugar', component: GamePage },
+      { title: 'Marcas Patrocinadoras', component: MarksPage },
+      { title: 'Premios', component: PrizesPage },
+      { title: 'La Bolsa', component: BagPage},
+      { title: 'Cerrar Sesión', component: HelloIonicPage }
     ];
   }
 
@@ -44,6 +56,10 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+   
+      this.nav.push(page.component);
+  
+
+    
   }
 }

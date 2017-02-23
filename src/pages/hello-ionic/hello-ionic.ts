@@ -6,7 +6,7 @@ import {Validators} from "../../../node_modules/@angular/forms/src/validators";
 import {FormControl} from "../../../node_modules/@angular/forms/src/model";
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {BienvenidaPage} from '../bienvenida/bienvenida';
-import {ListPage} from '../list/list';
+import {HomePage} from '../home/home';
 
 
 function cedulaValidator(control: FormControl): {[s: string]:boolean}{
@@ -27,10 +27,8 @@ function cedulaValidator(control: FormControl): {[s: string]:boolean}{
           </ion-item>
 
         </ion-list>
-
-        <div padding>
-          <p style="color:red" *ngIf="formulario.controls['cedula'].hasError('cedulaInvalida') && formulario.controls['cedula'].touched">Número de cedula no valido</p>
-        </div>
+        
+        <p style="color:red" *ngIf="formulario.controls['cedula'].hasError('cedulaInvalida') && formulario.controls['cedula'].touched">Número de cedula no valido</p>
 
         <div padding>
           <button ion-button color="danger" block type="submit" [disabled]="!formulario.valid">Ingresar</button>
@@ -72,7 +70,7 @@ export class LoginForm{
           this.userService.updateUserStatus(value.cedula);
           this.navCtrl.setRoot(BienvenidaPage);
           }else{
-          this.navCtrl.setRoot(ListPage);
+          this.navCtrl.setRoot(HomePage);
           }
         }
 
@@ -86,7 +84,7 @@ export class LoginForm{
       subTitle: 'Por favor registrate si deseas ganar mas puntos',
       buttons: ['OK']
     });
-    alert.present();
+    alert.present(); 
 
   }
 
