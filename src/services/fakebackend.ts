@@ -11,5 +11,6 @@ export const Users: Object[] = [
 ];
 
 export const Sponsors: Object[] = [
-    {name: "Bavaria", imgUrl: "img/logo-bavaria.jpg"}
+    {name: "Bavaria", imgUrl: "img/logo-bavaria.jpg"},
+    {name: "Kool Aid", imgUrl:"img/logo-kool.jpg"}
 ]

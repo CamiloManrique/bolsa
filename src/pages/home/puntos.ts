@@ -36,7 +36,6 @@ export class PointsController implements OnInit{
         `,
     providers:[La14Service]
 })
-
 export class Points extends PointsController{
     constructor(la14service: La14Service){
         super(la14service);

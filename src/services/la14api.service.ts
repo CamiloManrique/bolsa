@@ -4,6 +4,7 @@
 import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Online, Users, Sponsors} from "./fakebackend";
+import {Sponsor} from "../pages/marks/sponsor";
 
 //Modificar por las variables reales
 export var BASE_URL = "http://jsonplaceholder.typicode.com";
@@ -69,7 +70,7 @@ export class La14Service{
          */
     }
 
-    getSponsors(): Promise<any>{
+    getSponsors(): Promise<Sponsor[]>{
         if(!Online){
             return Promise.reject("El servicio no está disponible");
         }

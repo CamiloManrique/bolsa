@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Points } from 'puntos';
-import {La14Service} from "../../../bolsa/src/services/la14api.service";
 
 /*
   Generated class for the Home page.
