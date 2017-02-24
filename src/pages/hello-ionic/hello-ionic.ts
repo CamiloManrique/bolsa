@@ -4,9 +4,10 @@ import {FormGroup} from "../../../node_modules/@angular/forms/src/model";
 import {FormBuilder} from "../../../node_modules/@angular/forms/src/form_builder";
 import {Validators} from "../../../node_modules/@angular/forms/src/validators";
 import {FormControl} from "../../../node_modules/@angular/forms/src/model";
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 import {BienvenidaPage} from '../bienvenida/bienvenida';
 import {HomePage} from '../home/home';
+import 'rxjs/add/operator/catch';
 
 
 function cedulaValidator(control: FormControl): {[s: string]:boolean}{
@@ -58,14 +59,9 @@ export class LoginForm{
 
     this.userService.verifyUsers(value.cedula).then(data => {
         this.data = data;
-
         if(this.data[0] == null){
-          //console.log("No existe este usuario en la base de datos");
           this.userDontExist();
         }else{
-
-          //this.docu = this.data[0].user_dc;
-
           if(this.data[0].user_st == 1){
           this.userService.updateUserStatus(value.cedula);
           this.navCtrl.setRoot(BienvenidaPage);
@@ -73,10 +69,21 @@ export class LoginForm{
           this.navCtrl.setRoot(HomePage);
           }
         }
-
+    }
+    ).catch( error => {
+      this.conexionFailure()
     });
   }
 
+  conexionFailure() {
+    let alert = this.alertCtrl.create({
+      title: 'Error de Conexión!',
+      subTitle: 'Por favor verifica tu conexión',
+      buttons: ['OK']
+    });
+    alert.present(); 
+
+  }
 
   userDontExist() {
     let alert = this.alertCtrl.create({
@@ -85,9 +92,7 @@ export class LoginForm{
       buttons: ['OK']
     });
     alert.present(); 
-
   }
-
 }
 
 @Component({

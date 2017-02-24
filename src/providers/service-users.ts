@@ -14,7 +14,7 @@ export class ServiceUsers {
 
   verifyUsers(value: any){
 
-    return new Promise(resolve =>{
+    return new Promise((resolve, reject) =>{
 
 
       let myHeader = new Headers({
@@ -34,7 +34,9 @@ export class ServiceUsers {
           this.data = data;
           resolve(this.data);
 
-      });
+      },
+      error => {reject(error)}
+      );
 
     });
 
@@ -52,12 +54,16 @@ export class ServiceUsers {
           this.data = data;
           resolve(this.data);
 
-      });
+      }
+      );
 
     });
 
 
   }
+
+
+ 
 
 
 
