@@ -3,6 +3,10 @@
  */
 import {Component} from '@angular/core';
 
+export function sponsorGenerator(object: any): Sponsor{
+    return new Sponsor(object.name, object.imgUrl);
+}
+
 export class Sponsor{
     constructor(public name:string, public imgUrl:string){ }
 }

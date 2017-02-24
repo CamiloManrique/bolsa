@@ -9,7 +9,11 @@ export class ServiceUsers {
   data:any;
 
   constructor(public http: Http) {
-    this.data = null;
+
+    this.data = {};
+
+    //Real code
+    //this.data = null;
   }
 
   verifyUsers(value: any){

@@ -4,36 +4,48 @@
 import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Online, Users, Sponsors} from "./fakebackend";
-import {Sponsor} from "../pages/marks/sponsor";
+import {Sponsor, sponsorGenerator} from "../pages/marks/sponsor";
 
 //Modificar por las variables reales
 export var BASE_URL = "http://jsonplaceholder.typicode.com";
 export var USER_ENDPOINT = "/posts/1";
 
+function userdataGenerator(object: any): Userdata{
+    return new Userdata(object.user, object.documento, object.puntos);
+}
+
+export class Userdata{
+    constructor(public name:string ="", public cc:string = "", public points:number = 0) {}
+}
+
 @Injectable()
 export class La14Service{
+
+    userdata: Userdata;
+    sponsors: Sponsor[];
+
     constructor(
         private http: Http
-    ){  }
+    ){
+        this.userdata = new Userdata();
+        this.sponsors = [];
+    }
 
-    getUserData(user: string): Promise<any>{
+    getUserData(user: string): void{
 
         // Fake Request (for testing purposes)
-
         if(!Online){
-            return Promise.reject("El servicio no está disponible");
+            console.log("Error de conexión");
         }
 
         for(let object of Users){
-            if(user == user) {
-                return Promise.resolve(object);
+            if(user == object.user) {
+                console.log(object);
+                this.userdata = userdataGenerator(object);
+                console.log(this.userdata);
+
             }
         }
-        return Promise.resolve({});
-
-
-
-
 
         // Real Http Request
         /*
@@ -47,15 +59,8 @@ export class La14Service{
         */
     }
 
-
-    getUserPoints(user: string): Promise<string> {
-        return new Promise((resolve, reject) => {
-            this.getUserData(user).then((userdata: any) => {
-                resolve(userdata.puntos); //Reemplazar por el miembro apropiado de puntos
-            }).catch((error: any) => {
-                reject(error);
-            })
-        })
+    getUserPoints(): number {
+        return this.userdata.points;
     }
 
     updateUserPoints(points) : Promise<any> {
@@ -70,12 +75,19 @@ export class La14Service{
          */
     }
 
-    getSponsors(): Promise<Sponsor[]>{
+    getSponsors(): void{
         if(!Online){
-            return Promise.reject("El servicio no está disponible");
+            console.log("El servicio no está disponible");
         }
 
-        return Promise.resolve(Sponsors)
+        let tmp_sponsors: Sponsor[] = [];
+        for(let s of Sponsors){
+            tmp_sponsors.push(sponsorGenerator(s));
+        }
+
+        this.sponsors = tmp_sponsors;
+
+
 
         // Real Http Request
         /*

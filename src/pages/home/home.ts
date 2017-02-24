@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Points } from 'puntos';
+import {La14Service} from "../../services/la14api.service";
+import {OnInit} from "@angular/core";
 
 /*
   Generated class for the Home page.
@@ -12,12 +13,19 @@ import { Points } from 'puntos';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public la14: La14Service) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+  }
+
+  ngOnInit(){
+    this.la14.getUserData("Camilo");
+    this.la14.getSponsors();
+    console.log(`No entiendo ${this.la14.userdata.points} esto`);
+
   }
 
 }
