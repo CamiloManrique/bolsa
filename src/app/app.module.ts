@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HelloIonicPage, LoginForm } from '../pages/hello-ionic/hello-ionic';
+import { LoginPage, LoginForm } from '../pages/login/login';
 import { BienvenidaPage } from '../pages/bienvenida/bienvenida';
 import { HomePage } from '../pages/home/home';
 import { RafflePage } from '../pages/raffle/raffle';
@@ -11,12 +11,14 @@ import { GamePage } from '../pages/game/game';
 import { MarksPage } from '../pages/marks/marks';
 import { PrizesPage } from '../pages/prizes/prizes';
 import { BagPage } from '../pages/bag/bag';
+import {Points} from "../pages/home/puntos";
 
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage, 
+    LoginPage,
     LoginForm,
+    Points,
     BienvenidaPage,
     HomePage,
     RafflePage,
@@ -33,7 +35,7 @@ import { BagPage } from '../pages/bag/bag';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    LoginPage,
     BienvenidaPage,
     HomePage,
     RafflePage,

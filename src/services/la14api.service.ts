@@ -50,7 +50,7 @@ export class La14Service{
     getUserPoints(user: string): Promise<string> {
         return new Promise((resolve, reject) => {
             this.getUserData(user).then((userdata: any) => {
-                resolve(userdata.body); //Reemplazar por el miembro apropiado de puntos
+                resolve(userdata.puntos); //Reemplazar por el miembro apropiado de puntos
             }).catch((error: any) => {
                 reject(error);
             })
