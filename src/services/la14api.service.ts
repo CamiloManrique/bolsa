@@ -3,7 +3,7 @@
  */
 import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
-import {Online, Users} from "./fakebackend";
+import {Online, Users, Sponsors} from "./fakebackend";
 
 //Modificar por las variables reales
 export var BASE_URL = "http://jsonplaceholder.typicode.com";
@@ -50,15 +50,46 @@ export class La14Service{
     getUserPoints(user: string): Promise<string> {
         return new Promise((resolve, reject) => {
             this.getUserData(user).then((userdata: any) => {
-                resolve(userdata.body); //Reemplazar por el miembro apropiado de puntos
+                resolve(userdata.puntos); //Reemplazar por el miembro apropiado de puntos
             }).catch((error: any) => {
                 reject(error);
             })
         })
     }
 
+    updateUserPoints(points) : Promise<any> {
 
-    updateUserPoints() : void {
-        console.log("Puntos actualizados");
+        //Test code
+        return Promise.resolve(true);
+
+        //Production code
+
+        /*
+
+         */
     }
+
+    getSponsors(): Promise<any>{
+        if(!Online){
+            return Promise.reject("El servicio no está disponible");
+        }
+
+        return Promise.resolve(Sponsors)
+
+        // Real Http Request
+        /*
+         return new Promise((resolve, reject) => {
+         this.http.request(`${BASE_URL}${USER_ENDPOINT}`)
+         .subscribe((res: Response) => {
+         resolve(res.json());
+         },
+         error => reject(null))
+         })
+         */
+
+    }
+
+    getPrizes(): Promise<any> { return Promise.resolve(true)  }
+
+    getRaffles(): Promise<any> { return Promise.resolve(true) }
 }

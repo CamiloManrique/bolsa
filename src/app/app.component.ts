@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { RafflePage } from '../pages/raffle/raffle';
 import { AccountPage } from '../pages/account/account';
@@ -20,8 +20,8 @@ import { BagPage } from '../pages/bag/bag';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  // make LoginPage the root (or first) page
+  rootPage: any = LoginPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -39,7 +39,7 @@ export class MyApp {
       { title: 'Marcas Patrocinadoras', component: MarksPage },
       { title: 'Premios', component: PrizesPage },
       { title: 'La Bolsa', component: BagPage},
-      { title: 'Cerrar Sesión', component: HelloIonicPage }
+      { title: 'Cerrar Sesión', component: LoginPage }
     ];
   }
 

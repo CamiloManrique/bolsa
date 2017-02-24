@@ -9,3 +9,7 @@ export const Users: Object[] = [
     {user: "Juan David", documento: "1.057.478.211", puntos: "50"},
     {user: "Jorge", documento: "1.871.214.781", puntos: "10"},
 ];
+
+export const Sponsors: Object[] = [
+    {name: "Bavaria", imgUrl: "img/logo-bavaria.jpg"}
+]
