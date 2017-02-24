@@ -1,4 +1,3 @@
-import {Injectable} from "../../node_modules/@angular/core/src/di/metadata";
 /**
  * Created by Administrador on 23/02/2017.
  */
@@ -12,5 +11,5 @@ export const Users: Object[] = [
 
 export const Sponsors: Object[] = [
     {name: "Bavaria", imgUrl: "img/logo-bavaria.jpg"},
-    {name: "Kool Aid", imgUrl:"img/logo-kool.jpg"}
-]
+    {name: "Kool Aid", imgUrl:"img/koolaid.png"}
+];

@@ -17,7 +17,9 @@ export class MarksPage implements OnInit{
 
   sponsors: Sponsor[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public la14: La14Service) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public la14: La14Service) {
+    this.sponsors = [];
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarksPage');
