@@ -15,4 +15,6 @@
 
 <ion-content padding>
 
+  <question-component *ngFor="let question-item of game.questions" [question]="question-item"></question-component>
+
 </ion-content>

@@ -13,7 +13,7 @@ export class Sponsor{
 
 
 @Component({
-    selector:"sponsor-div",
+    selector:"sponsor-component",
     inputs:["sponsor"],
     template:`
     <div>
@@ -22,6 +22,6 @@ export class Sponsor{
     </div>
     `
 })
-export class SponsorDiv{
+export class SponsorComponent{
     sponsor: Sponsor;
 }

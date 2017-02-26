@@ -12,7 +12,7 @@ import { MarksPage } from '../pages/marks/marks';
 import { PrizesPage } from '../pages/prizes/prizes';
 import { BagPage } from '../pages/bag/bag';
 import {Points} from "../pages/home/puntos";
-import {Sponsor, SponsorDiv} from "../pages/marks/sponsor";
+import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
 import {La14Service} from "../services/la14api.service";
 import {AccountForm} from "../pages/account/account-form";
 import {ServiceUsers} from "../providers/service-users";
@@ -29,7 +29,7 @@ import {ServiceUsers} from "../providers/service-users";
     AccountPage, AccountForm,
     TicketsPage,
     GamePage,
-    MarksPage, SponsorDiv,
+    MarksPage, SponsorComponent,
     PrizesPage,
     BagPage
   ],

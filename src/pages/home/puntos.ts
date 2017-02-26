@@ -12,6 +12,7 @@ export class PointsController{
         this.la14 = la14;
     }
 
+
     updatePoints(points: number):void{
         this.la14.updateUserPoints(points).then(res => {
             if(res){
