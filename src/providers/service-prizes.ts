@@ -19,7 +19,7 @@ export class ServicePrizes {
 
 
 
-  selectPrizes(){
+  selectPrizes(page:any){
 
     this.data = null;
 
@@ -36,7 +36,7 @@ export class ServicePrizes {
           headers: myHeader
       });
 
-      this.http.get('http://localhost/aplicacion/index.php/Prizes/getAll',options)
+      this.http.get('http://192.168.1.68/aplicacion/index.php/Prizes/getAll/'+page,options)
       .map(res => res.json())
       .subscribe(data => {
 
@@ -52,6 +52,42 @@ export class ServicePrizes {
 
 
   }
+
+
+
+
+
+    selectPrize(id:any){
+
+    this.data = null;
+
+    return new Promise((resolve, reject) =>{
+
+      let myHeader = new Headers({
+        "Content-Type":"text/html; charset=UTF-8"
+      });
+
+      let options = new RequestOptions({
+          headers: myHeader
+      });
+
+      this.http.get('http://localhost/aplicacion/index.php/Prizes/getPrize/'+id,options)
+      .map(res => res.json())
+      .subscribe(data => {
+
+          this.data = data;
+          resolve(this.data);
+
+      },
+      error => {reject(error)}
+      );
+
+    });
+
+
+
+  }
+
 
 
 

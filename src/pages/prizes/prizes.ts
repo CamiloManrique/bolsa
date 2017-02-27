@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, RefresherContent} from 'ionic-angular';
 import {ServicePrizes} from '../../providers/service-prizes';
+import {PrizeDetailPage} from '../prize-detail/prize-detail';
 
 /*
   Generated class for the Prizes page.
@@ -40,11 +41,13 @@ import {ServicePrizes} from '../../providers/service-prizes';
   providers: [ServicePrizes]
 })
 export class PrizesPage {
-
+   page: any;
    prizes: any;
+   prize: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public prizesServices:ServicePrizes) {
 
+    this.page = 20;
     this.doRefresh(0);
 
   }
@@ -53,14 +56,35 @@ export class PrizesPage {
     console.log('ionViewDidLoad PrizesPage');
   }
 
-  doRefresh(refresher){
 
-      this.prizesServices.selectPrizes().then(
+  itemTapped(event, prize) {
+
+    let id = prize.prize_id;
+
+    this.prizesServices.selectPrize(id).then(
+        data =>{
+        this.prize = data;
+
+        this.navCtrl.push(PrizeDetailPage,{prize:this.prize});
+      });
+
+      
+      
+
+   
+  }
+
+
+  doRefresh(refresher){
+      
+      this.prizesServices.selectPrizes(this.page).then(
 
         data =>{
         this.prizes = data;
-        if(refresher != 0)
+        if(refresher != 0){
           refresher.complete();
+          this.page = this.page + 20;
+        }
 
       });
 

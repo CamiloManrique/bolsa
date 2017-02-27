@@ -31,7 +31,7 @@ export class ServiceUsers {
           headers: myHeader
       });
 
-      this.http.get('http://localhost/aplicacion/index.php/Data/verificar/'+value,options)
+      this.http.get('http://192.168.1.68/aplicacion/index.php/Data/verificar/'+value,options)
       .map(res => res.json())
       .subscribe(data => {
 
@@ -51,7 +51,7 @@ export class ServiceUsers {
 
     return new Promise(resolve =>{
 
-      this.http.get('http://localhost/aplicacion/index.php/Data/actualizar/0/'+numDocument)
+      this.http.get('http://192.168.1.68/aplicacion/index.php/Data/actualizar/0/'+numDocument)
       .map(res => res.json())
       .subscribe(data => {
 

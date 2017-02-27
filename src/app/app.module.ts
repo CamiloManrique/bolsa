@@ -19,6 +19,9 @@ import {ServiceUsers} from "../providers/service-users";
 import {QuestionComponent} from "../pages/game/questions";
 import {MainMenu} from "../pages/game/main-menu";
 import {GameContent} from "../pages/game/content";
+import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import {GameContent} from "../pages/game/content";
     TicketsPage,
     GamePage, MainMenu, GameContent, QuestionComponent,
     MarksPage, SponsorComponent,
-    PrizesPage,
+    PrizesPage, PrizeDetailPage,
     BagPage
   ],
   imports: [
@@ -50,7 +53,7 @@ import {GameContent} from "../pages/game/content";
     TicketsPage,
     GamePage,
     MarksPage,
-    PrizesPage,
+    PrizesPage, PrizeDetailPage,
     BagPage
   ],
   providers: [
