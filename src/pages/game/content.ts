@@ -9,7 +9,7 @@ import {Question} from "./questions";
     selector: "game",
     inputs:["state"],
     template: `
-        <question-component *ngFor="let question_item of game.questions" [question]="question_item"></question-component>
+        <h1>Aquí va el juego</h1>
     `,
     providers: [GameService]
 })

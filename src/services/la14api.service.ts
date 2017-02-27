@@ -3,8 +3,10 @@
  */
 import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
-import {Online, Users, Sponsors} from "./fakebackend";
+import {Online, Users, Sponsors, Raffles} from "./fakebackend";
 import {Sponsor, sponsorGenerator} from "../pages/marks/sponsor";
+import {Raffle, raffleGenerator} from "../pages/raffle/raffle-item";
+
 
 //Modificar por las variables reales
 export var BASE_URL = "http://jsonplaceholder.typicode.com";
@@ -23,6 +25,7 @@ export class La14Service{
 
     userdata: Userdata;
     sponsors: Sponsor[];
+    raffles: Raffle[];
 
     constructor(
         private http: Http
@@ -104,5 +107,19 @@ export class La14Service{
 
     getPrizes(): Promise<any> { return Promise.resolve(true)  }
 
-    getRaffles(): Promise<any> { return Promise.resolve(true) }
+    getRaffles(): void {
+
+        if(!Online){
+            console.log("El servicio no está disponible");
+        }
+
+        let tmp_raffles: Raffle[] = [];
+        for(let r of Raffles){
+            tmp_raffles.push(raffleGenerator(r));
+        }
+
+        this.raffles = tmp_raffles;
+        console.log(this.raffles);
+
+    }
 }
