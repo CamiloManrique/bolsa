@@ -13,12 +13,16 @@ import {Sponsor} from "./sponsor";
   selector: 'page-marks',
   templateUrl: 'marks.html'
 })
-export class MarksPage{
+export class MarksPage implements OnInit{
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public la14: La14Service) {  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarksPage');
+  }
+
+  ngOnInit(){
+    this.la14.getSponsors();
   }
 
 }

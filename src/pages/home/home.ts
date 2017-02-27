@@ -23,9 +23,6 @@ export class HomePage implements OnInit{
 
   ngOnInit(){
     this.la14.getUserData("Camilo");
-    this.la14.getSponsors();
-    console.log(`No entiendo ${this.la14.userdata.points} esto`);
-
   }
 
 }

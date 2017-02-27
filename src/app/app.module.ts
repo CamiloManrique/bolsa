@@ -16,6 +16,9 @@ import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
 import {La14Service} from "../services/la14api.service";
 import {AccountForm} from "../pages/account/account-form";
 import {ServiceUsers} from "../providers/service-users";
+import {QuestionComponent} from "../pages/game/questions";
+import {MainMenu} from "../pages/game/main-menu";
+import {GameContent} from "../pages/game/content";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,7 @@ import {ServiceUsers} from "../providers/service-users";
     RafflePage,
     AccountPage, AccountForm,
     TicketsPage,
-    GamePage,
+    GamePage, MainMenu, GameContent, QuestionComponent,
     MarksPage, SponsorComponent,
     PrizesPage,
     BagPage
