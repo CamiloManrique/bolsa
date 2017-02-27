@@ -4,7 +4,7 @@ import {FormGroup} from "../../../node_modules/@angular/forms/src/model";
 import {FormBuilder} from "../../../node_modules/@angular/forms/src/form_builder";
 import {Validators} from "../../../node_modules/@angular/forms/src/validators";
 import {FormControl} from "../../../node_modules/@angular/forms/src/model";
-import {NavController, NavParams, AlertController} from 'ionic-angular';
+import {NavController, NavParams, AlertController, ToastController} from 'ionic-angular';
 import {BienvenidaPage} from '../bienvenida/bienvenida';
 import {HomePage} from '../home/home';
 import 'rxjs/add/operator/catch';
@@ -44,7 +44,7 @@ export class LoginForm{
   data: any;
   docu: any;
   isActive: boolean;
-  constructor(fb: FormBuilder,private userService:ServiceUsers,public navCtrl: NavController, public alertCtrl: AlertController){
+  constructor(fb: FormBuilder,private userService:ServiceUsers,public navCtrl: NavController, public alertCtrl: AlertController, public toastCtrl:ToastController){
       this.formulario = fb.group({
       "cedula":["", Validators.compose([
           Validators.required, cedulaValidator ])
@@ -78,13 +78,11 @@ export class LoginForm{
   }
 
   conexionFailure() {
-    let alert = this.alertCtrl.create({
-      title: 'Error de Conexión!',
-      subTitle: 'Por favor verifica tu conexión',
-      buttons: ['OK']
+   let toast = this.toastCtrl.create({
+      message: 'Error de conexión, por favor compruebe su conexión a internet.',
+      duration: 3000
     });
-    alert.present(); 
-
+    toast.present();
   }
 
   userDontExist() {
