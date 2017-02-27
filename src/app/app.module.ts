@@ -20,6 +20,8 @@ import {QuestionComponent} from "../pages/game/questions";
 import {MainMenu} from "../pages/game/main-menu";
 import {GameContent} from "../pages/game/content";
 import {RaffleComponent} from "../pages/raffle/raffle-item";
+import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
+
 
 @NgModule({
   declarations: [
@@ -29,12 +31,12 @@ import {RaffleComponent} from "../pages/raffle/raffle-item";
     Points,
     BienvenidaPage,
     HomePage,
-    RafflePage,
+    RafflePage,RaffleComponent,
     AccountPage, AccountForm,
     TicketsPage,
     GamePage, MainMenu, GameContent, QuestionComponent,
     MarksPage, SponsorComponent,
-    PrizesPage, RaffleComponent,
+    PrizesPage, PrizeDetailPage,
     BagPage
   ],
   imports: [
@@ -51,7 +53,7 @@ import {RaffleComponent} from "../pages/raffle/raffle-item";
     TicketsPage,
     GamePage,
     MarksPage,
-    PrizesPage,
+    PrizesPage, PrizeDetailPage,
     BagPage
   ],
   providers: [

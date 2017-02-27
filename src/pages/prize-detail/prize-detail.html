@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar *ngIf="prizeItemSelected">
+    <ion-title>{{prizeItemSelected[0].prize_nomb}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-card *ngIf="prizeItemSelected">
+
+    <img src="{{prizeItemSelected[0].prize_image}}"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{prizeItemSelected[0].prize_nomb}}
+      </ion-card-title>
+      <p>
+        {{prizeItemSelected[0].prize_desc}}
+      </p>
+    </ion-card-content>
+
+    <!--<ion-item>
+      <ion-icon name='musical-notes' item-left style="color: #d03e84"></ion-icon>
+      Albums
+      <ion-badge item-right>9</ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='logo-twitter' item-left style="color: #55acee"></ion-icon>
+      Followers
+      <ion-badge item-right>260k</ion-badge>
+    </ion-item>-->
+
+  </ion-card>
+
+
+
+</ion-content>
