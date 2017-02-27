@@ -19,8 +19,8 @@ import {ServiceUsers} from "../providers/service-users";
 import {QuestionComponent} from "../pages/game/questions";
 import {MainMenu} from "../pages/game/main-menu";
 import {GameContent} from "../pages/game/content";
+import {RaffleComponent} from "../pages/raffle/raffle-item";
 import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
-
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
     Points,
     BienvenidaPage,
     HomePage,
-    RafflePage,
+    RafflePage,RaffleComponent,
     AccountPage, AccountForm,
     TicketsPage,
     GamePage, MainMenu, GameContent, QuestionComponent,
@@ -59,7 +59,7 @@ import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: La14Service, useClass: La14Service},
-    {provide: ServiceUsers, useClass: ServiceUsers}
+    {provide: ServiceUsers, useClass: ServiceUsers},
   ]
 })
 export class AppModule {}

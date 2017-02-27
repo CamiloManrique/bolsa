@@ -55,10 +55,11 @@ export class LoginForm{
 
   onSubmit(value: any): void{
 
-    //this.navCtrl.setRoot(HomePage);
+    //Develop Instant acccess
+    this.navCtrl.setRoot(HomePage);
 
     //Production Code
-    
+    /*
     this.userService.verifyUsers(value.cedula).then(data => {
         this.data = data;
         if(this.data[0] == null){
@@ -74,7 +75,7 @@ export class LoginForm{
     }
     ).catch( error => {
       this.conexionFailure()
-    });
+    });*/
   }
 
   conexionFailure() {

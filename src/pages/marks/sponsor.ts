@@ -16,9 +16,9 @@ export class Sponsor{
     selector:"sponsor-component",
     inputs:["sponsor"],
     template:`
-    <div>
+    <div class="sponsor">
         <img [src]="sponsor.imgUrl">
-        <p>{{sponsor.name}}</p>
+        <h6 class="sponsor-label">{{sponsor.name}}</h6>
     </div>
     `
 })

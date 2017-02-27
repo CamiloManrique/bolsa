@@ -15,6 +15,19 @@ export const Sponsors: any[] = [
     {name: "Kool Aid", imgUrl:"img/koolaid.png"}
 ];
 
+export const Raffles: any[] = [
+    {time:"2017-02-02", winners:[
+        {name:"Camilo", prize:"Moto eléctrica"},
+        {name:"Juan David", prize:"Carro eléctrico"},
+        {name: "Jorge", prize: "Bicicleta"}
+    ]},
+    {time:"2017-02-15", winners:[
+        {name:"Carlos", prize:"Carro eléctrico"},
+        {name:"Andrés", prize:"Lavadora"},
+        {name: "Mario", prize: "DVD"}
+    ]}
+];
+
 export const Questions: Question[] = [
     new Question(
         "¿Cuanto es 2 + 2 ?",
