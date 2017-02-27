@@ -15,4 +15,13 @@
 
 <ion-content padding>
 
+  <ion-row>
+    <ion-col width-50 *ngFor="let item of la14.sponsors">
+      <sponsor-component [sponsor]="item"></sponsor-component>
+    </ion-col>
+
+  </ion-row>
+
+
+
 </ion-content>

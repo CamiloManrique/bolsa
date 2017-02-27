@@ -1,25 +1,20 @@
 /**
  * Created by Administrador on 23/02/2017.
  */
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {La14Service} from '../../services/la14api.service';
 
-export class PointsController implements OnInit{
+export class PointsController{
     points: number;
-    la14service: La14Service
+    la14: La14Service;
 
-    constructor(la14service: La14Service){
-        this.la14service = la14service;
+    constructor(la14: La14Service){
+        this.la14 = la14;
     }
 
-    ngOnInit(){
-        this.la14service.getUserPoints("Camilo").then(points => {
-            this.points = +points;
-        });
-    }
 
     updatePoints(points: number):void{
-        this.la14service.updateUserPoints(points).then(res => {
+        this.la14.updateUserPoints(points).then(res => {
             if(res){
                 this.points+=points;
             }
@@ -32,15 +27,11 @@ export class PointsController implements OnInit{
     selector: "points",
     template:
         `
-        <div>Tienes {{points}} puntos</div>
-        `,
-    providers:[La14Service]
+        <div>{{la14.getUserPoints()}}</div>
+        `
 })
-
 export class Points extends PointsController{
-    constructor(la14service: La14Service){
-        super(la14service);
+    constructor(la14: La14Service){
+        super(la14);
     }
-
 }
-

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {La14Service} from '../../services/la14api.service';
+import {Sponsor} from "./sponsor";
 
 /*
   Generated class for the Marks page.
@@ -11,12 +13,16 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-marks',
   templateUrl: 'marks.html'
 })
-export class MarksPage {
+export class MarksPage implements OnInit{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public la14: La14Service) {  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarksPage');
+  }
+
+  ngOnInit(){
+    this.la14.getSponsors();
   }
 
 }

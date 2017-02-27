@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {Component, OnInit} from "@angular/core";
+import {MainMenu} from "./main-menu";
 
 /*
   Generated class for the Game page.
@@ -9,14 +10,26 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   selector: 'page-game',
-  templateUrl: 'game.html'
+  templateUrl: 'game.html',
 })
-export class GamePage {
+export class GamePage implements OnInit{
+
+  state: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GamePage');
   }
+
+  ngOnInit(){
+    this.state = "MainMenu";
+  }
+
+  changeState(state:string): void{
+    console.log(`Receiving state: ${state}`)
+    this.state = state;
+  }
+
 
 }

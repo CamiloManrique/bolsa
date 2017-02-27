@@ -36,8 +36,7 @@ function cedulaValidator(control: FormControl): {[s: string]:boolean}{
         </div>
 
       </form>
-  `,
-  providers: [ServiceUsers]
+  `
 })
 
 export class LoginForm{

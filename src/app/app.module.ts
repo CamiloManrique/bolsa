@@ -12,6 +12,13 @@ import { MarksPage } from '../pages/marks/marks';
 import { PrizesPage } from '../pages/prizes/prizes';
 import { BagPage } from '../pages/bag/bag';
 import {Points} from "../pages/home/puntos";
+import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
+import {La14Service} from "../services/la14api.service";
+import {AccountForm} from "../pages/account/account-form";
+import {ServiceUsers} from "../providers/service-users";
+import {QuestionComponent} from "../pages/game/questions";
+import {MainMenu} from "../pages/game/main-menu";
+import {GameContent} from "../pages/game/content";
 
 @NgModule({
   declarations: [
@@ -22,10 +29,10 @@ import {Points} from "../pages/home/puntos";
     BienvenidaPage,
     HomePage,
     RafflePage,
-    AccountPage,
+    AccountPage, AccountForm,
     TicketsPage,
-    GamePage,
-    MarksPage,
+    GamePage, MainMenu, GameContent, QuestionComponent,
+    MarksPage, SponsorComponent,
     PrizesPage,
     BagPage
   ],
@@ -46,6 +53,10 @@ import {Points} from "../pages/home/puntos";
     PrizesPage,
     BagPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: La14Service, useClass: La14Service},
+    {provide: ServiceUsers, useClass: ServiceUsers}
+  ]
 })
 export class AppModule {}

@@ -15,4 +15,7 @@
 
 <ion-content padding>
 
+  <main-menu *ngIf="state == 'MainMenu'" [state]="state" (stateEmitter)="changeState($event)"></main-menu>
+  <game *ngIf="state == 'Game'" [state]="state" (stateEmitter)="changeState($event)"></game>
+
 </ion-content>
