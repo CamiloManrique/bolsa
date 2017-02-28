@@ -1,5 +1,5 @@
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
-import {CustomValidators} from "../../services/customvalidators";
+import {CustomValidators} from "../../providers/customvalidators";
 import {Component} from "@angular/core";
 /**
  * Created by Administrador on 24/02/2017.

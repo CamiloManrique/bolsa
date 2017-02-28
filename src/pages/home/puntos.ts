@@ -2,7 +2,7 @@
  * Created by Administrador on 23/02/2017.
  */
 import {Component} from "@angular/core";
-import {La14Service} from '../../services/la14api.service';
+import {La14Service} from '../../providers/la14api.service';
 
 export class PointsController{
     points: number;

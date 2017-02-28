@@ -2,7 +2,7 @@
  * Created by Casa on 26/2/2017.
  */
 import {Component, OnInit} from "@angular/core";
-import {GameService} from "../../services/gameservice";
+import {GameService} from "../../providers/gameservice";
 import {Question} from "./questions";
 
 @Component({

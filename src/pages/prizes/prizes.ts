@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, RefresherContent} from 'ionic-angular';
+import { NavController, NavParams, ToastController} from 'ionic-angular';
 import {ServicePrizes} from '../../providers/service-prizes';
 import {PrizeDetailPage} from '../prize-detail/prize-detail';
 
@@ -45,7 +45,7 @@ export class PrizesPage {
    prizes: any;
    prize: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public prizesServices:ServicePrizes) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public prizesServices:ServicePrizes,public toastCtrl:ToastController) {
 
     this.page = 20;
     this.doRefresh(0);
@@ -64,16 +64,20 @@ export class PrizesPage {
     this.prizesServices.selectPrize(id).then(
         data =>{
         this.prize = data;
-
         this.navCtrl.push(PrizeDetailPage,{prize:this.prize});
+      }).catch(error=>{
+        this.errorToast();
       });
-
-      
-      
-
    
   }
 
+   errorToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Error de conexión, por favor compruebe su conexión a internet.',
+      duration: 3000
+    });
+    toast.present();
+  }
 
   doRefresh(refresher){
       
@@ -86,6 +90,8 @@ export class PrizesPage {
           this.page = this.page + 20;
         }
 
+      }).catch(error=>{
+        this.errorToast();
       });
 
     };

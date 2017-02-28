@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {La14Service} from "../../services/la14api.service";
+import {La14Service} from "../../providers/la14api.service";
 import {OnInit} from "@angular/core";
 
 /*

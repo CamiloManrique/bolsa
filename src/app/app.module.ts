@@ -13,7 +13,7 @@ import { PrizesPage } from '../pages/prizes/prizes';
 import { BagPage } from '../pages/bag/bag';
 import {Points} from "../pages/home/puntos";
 import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
-import {La14Service} from "../services/la14api.service";
+import {La14Service} from "../providers/la14api.service";
 import {AccountForm} from "../pages/account/account-form";
 import {ServiceUsers} from "../providers/service-users";
 import {QuestionComponent} from "../pages/game/questions";

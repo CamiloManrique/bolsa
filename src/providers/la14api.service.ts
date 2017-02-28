@@ -118,6 +118,7 @@ export class La14Service{
             tmp_raffles.push(raffleGenerator(r));
         }
 
+
         this.raffles = tmp_raffles;
         console.log(this.raffles);
 

@@ -2,7 +2,7 @@
  * Created by Administrador on 27/02/2017.
  */
 import {Component} from "@angular/core";
-import {stringToDate} from "../../services/globalutils"
+import {stringToDate} from "../../providers/globalutils"
 
 export function raffleGenerator(object: any): Raffle{
     let time: Date = stringToDate(object.time, "yyyy-MM-dd", "-");
