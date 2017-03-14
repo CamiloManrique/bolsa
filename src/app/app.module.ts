@@ -12,7 +12,7 @@ import { MarksPage } from '../pages/marks/marks';
 import { PrizesPage } from '../pages/prizes/prizes';
 import { BagPage } from '../pages/bag/bag';
 import {Points} from "../pages/home/puntos";
-import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
+//import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
 import {La14Service} from "../providers/la14api.service";
 import {AccountForm} from "../pages/account/account-form";
 import {ServiceUsers} from "../providers/service-users";
@@ -21,6 +21,7 @@ import {MainMenu} from "../pages/game/main-menu";
 import {GameContent} from "../pages/game/content";
 import {RaffleComponent} from "../pages/raffle/raffle-item";
 import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
+import {PartnerDetailPage} from "../pages/partner-detail/partner-detail";
 import {Timer} from "../pages/game/timer";
 
 
@@ -36,7 +37,7 @@ import {Timer} from "../pages/game/timer";
     AccountPage, AccountForm,
     TicketsPage,
     GamePage, MainMenu, GameContent, QuestionComponent, QuestionComponent, Timer,
-    MarksPage, SponsorComponent,
+    MarksPage, PartnerDetailPage,
     PrizesPage, PrizeDetailPage,
     BagPage
   ],

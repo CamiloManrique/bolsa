@@ -7,21 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Marcas Patrocinadoras</ion-title>
+    <ion-title>Patrocinadores</ion-title>
   </ion-navbar>
+
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8><img width="150%" src='img/change.png' /></ion-col>
+    <ion-col col-2></ion-col>
+</ion-row>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <ion-row>
-    <ion-col width-50 *ngFor="let item of la14.sponsors">
-      <sponsor-component [sponsor]="item"></sponsor-component>
-    </ion-col>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+  <ion-refresher-content>
+  </ion-refresher-content>
+  </ion-refresher>
 
-  </ion-row>
+  <ion-list>
+  <div *ngFor= "let partner of partners" (click)="itemTapped($event, partner)">
+  <ion-item>
+      <ion-thumbnail item-left> <img src='{{partner.partner_img}}' /></ion-thumbnail> 
+      <h6 style="margin-bottom: 0%;margin-left: 15%;">Ver Productos...</h6>
+  
+  </ion-item> 
+  </div>
+  </ion-list>
 
 
+  <ion-infinite-scroll (ionInfinite)="doRefresh($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

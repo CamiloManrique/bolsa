@@ -2,9 +2,9 @@
  * Created by Administrador on 22/02/2017.
  */
 import { Injectable } from '@angular/core';
-import {Http, Response} from "@angular/http";
-import {Online, Users, Sponsors, Raffles} from "./fakebackend";
-import {Sponsor, sponsorGenerator} from "../pages/marks/sponsor";
+import {Http} from "@angular/http";
+import {Online, Users, Raffles} from "./fakebackend";
+//import {Sponsor, sponsorGenerator} from "../pages/marks/sponsor";
 import {Raffle, raffleGenerator} from "../pages/raffle/raffle-item";
 
 
@@ -24,14 +24,14 @@ export class Userdata{
 export class La14Service{
 
     userdata: Userdata;
-    sponsors: Sponsor[];
+    //ponsors: Sponsor[];
     raffles: Raffle[];
 
     constructor(
         private http: Http
     ){
         this.userdata = new Userdata();
-        this.sponsors = [];
+        //this.sponsors = [];
     }
 
     getUserData(user: string): void{
@@ -83,12 +83,12 @@ export class La14Service{
             console.log("El servicio no está disponible");
         }
 
-        let tmp_sponsors: Sponsor[] = [];
-        for(let s of Sponsors){
-            tmp_sponsors.push(sponsorGenerator(s));
-        }
+       // let tmp_sponsors: Sponsor[] = [];
+        /*for(let s of Sponsors){
+         //   tmp_sponsors.push(sponsorGenerator(s));
+        }*/
 
-        this.sponsors = tmp_sponsors;
+       // this.sponsors = tmp_sponsors;
 
 
 
