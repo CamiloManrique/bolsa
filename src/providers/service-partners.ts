@@ -51,6 +51,38 @@ export class ServicePartners {
   }
 
 
+    selectPartner(id:any){
+
+    this.data = null;
+
+    return new Promise((resolve, reject) =>{
+
+      let myHeader = new Headers({
+        "Content-Type":"text/html; charset=UTF-8"
+      });
+
+      let options = new RequestOptions({
+          headers: myHeader
+      });
+
+      this.http.get('http://localhost/aplicacion/index.php/Partners/getPartner/'+id,options)
+      .map(res => res.json())
+      .subscribe(data => {
+
+          this.data = data;
+          resolve(this.data);
+
+      },
+      error => {reject(error)}
+      );
+
+    });
+
+
+
+  }
+
+
 
 
 

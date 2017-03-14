@@ -1,43 +1,28 @@
 <!--
-  Generated template for the Prizes page.
+  Generated template for the PartnerDetail page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Premios</ion-title>
+  <ion-navbar *ngIf="partnerItemSelected">
+    <ion-title>{{partnerItemSelected[0].partner_nomb}}</ion-title>
   </ion-navbar>
 
-
-
-<ion-row>
+  <ion-row *ngIf="partnerItemSelected">
     <ion-col col-2></ion-col>
-    <ion-col col-8><img width="150%" src='img/change.png' /></ion-col>
+    <ion-col col-8><img width="150%" src='{{partnerItemSelected[0].partner_img}}' /></ion-col>
     <ion-col col-2></ion-col>
-</ion-row>
-
-
-    
-
-  
-
-
-
+  </ion-row>
 
 </ion-header>
 
 
-<ion-content padding >
+<ion-content padding>
 
-
-
-<ion-refresher (ionRefresh)="doRefresh($event);">
+  <ion-refresher (ionRefresh)="doRefresh($event);">
   <ion-refresher-content>
-
-      
-    
   </ion-refresher-content>
 </ion-refresher>
 
@@ -46,7 +31,7 @@
   <ion-item>
       <ion-thumbnail item-left> <img src='{{prize.prize_image}}' /></ion-thumbnail> 
       <h6 style="margin-bottom: 0%;">{{prize.prize_nomb}}</h6>
-      <p>{{prize.prize_desc}}</p>
+      <p id="points">{{prize.prize_points}} Puntos</p>
   </ion-item> 
   </div>
   </ion-list>

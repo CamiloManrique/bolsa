@@ -36,7 +36,7 @@ export class MyApp {
       { title: 'Opciones', component: AccountPage },
       { title: 'Boletas', component: TicketsPage },
       { title: 'Jugar', component: GamePage },
-      { title: 'Marcas Patrocinadoras', component: MarksPage },
+      { title: 'Patrocinadores', component: MarksPage },
       { title: 'Premios', component: PrizesPage },
       { title: 'La Bolsa', component: BagPage},
       { title: 'Cerrar Sesión', component: LoginPage }
