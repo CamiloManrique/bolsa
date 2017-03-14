@@ -14,12 +14,15 @@ import {Timer} from "./timer";
 
     <div *ngIf="!finished">
         <ion-row>
-            <ion-col col-3><timer (timeUp)="processQuestion($event)" [total_time]=10></timer></ion-col>
-            <ion-col col-3>{{actual_question}}/5</ion-col>
-            <ion-col col-3>Puntos: {{points}}</ion-col>
+            <ion-col col-6><div class="game-icon points"><img src="img/game/puntos.png"><span>{{points}}</span></div></ion-col>
+            <ion-col col-6><div class="game-icon questions-progress"><img src="img/game/pregunta.png"><span>{{actual_question}} de {{max_questions}}</span></div></ion-col>
         </ion-row>
 
-        <ion-row>
+        <ion-row padding>
+            <ion-col col-12><timer (timeUp)="processQuestion($event)" [total_time]=50></timer></ion-col>
+        </ion-row>
+
+        <ion-row padding>
             <ion-col col-12><question-component (answerEmitter)="processQuestion($event)" [question]="questions[actual_question-1]"></question-component></ion-col>
         </ion-row>
     </div>
@@ -48,6 +51,7 @@ export class GameContent{
     actual_question: number;
     actual_time: number;
     questions:Question[];
+    max_questions: number;
 
     constructor(private game: GameService){
         this.finished = false;
@@ -55,6 +59,7 @@ export class GameContent{
         this.points = 0;
         this.actual_time = 0;
         this.actual_question = 1;
+        this.max_questions = 5;
         this.questions = this.game.getQuestions();
         console.log(this.questions);
     }

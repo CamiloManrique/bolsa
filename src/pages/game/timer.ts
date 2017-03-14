@@ -10,7 +10,19 @@ import {Observable} from 'rxjs/Rx';
     inputs:["total_time"],
     outputs:["timeUp"],
     template:`
-        <p>{{ticks}}</p>
+        <ion-row>
+            <ion-col col-12>
+                <h1>Tiempo</h1>
+                <ion-col col-12>
+                <div class="outer">
+                    <div class="inner" [style.width]="100 - 100*(ticks/total_time)+'%'"></div>
+                </div>
+            </ion-col>
+            </ion-col>
+
+        </ion-row>
+
+
 
     `
 })

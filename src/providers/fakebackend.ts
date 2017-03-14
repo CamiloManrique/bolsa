@@ -30,18 +30,18 @@ export const Raffles: any[] = [
 
 export const Questions: Question[] = [
     new Question(
-        "¿Cuanto es 2 + 2 ?",
-        ["1", "3", "4", "10"],
-        2
-    ),
-    new Question(
-        "¿Quien es el más vagal de EME?",
-        ["Camilo", "Juanito", "Juan David", "David"],
+        "¿A qué se le llama \"No potable\"?",
+        ["A una parte de África", "Al agua que no es apta para el consumo humano", "A un animal peligroso"],
         1
     ),
     new Question(
-        "¿Se entregará la app de la 14 a tiempo?",
-        ["Si", "No", "Tal vez", "Ninguna de las anteriores"],
-        3
+        "¿Qué es el reciclaje?",
+        ["La reutilización de ciertos materiales", "Un sistema de almacenamiento", "La explotación de arrecifes"],
+        0
+    ),
+    new Question(
+        "Un ejemplo de recurso renovable es:",
+        ["El petróleo", "El agua", "Ninguna de las anteriores"],
+        1
     )
 ];
