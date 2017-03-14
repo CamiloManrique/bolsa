@@ -36,7 +36,7 @@ export class ServicePrizes {
           headers: myHeader
       });
 
-      this.http.get('http://192.168.1.68/aplicacion/index.php/Prizes/getAll/'+page,options)
+      this.http.get('http://localhost/aplicacion/index.php/Prizes/getAll/'+page,options)
       .map(res => res.json())
       .subscribe(data => {
 
