@@ -54,7 +54,7 @@ import {Timer} from "../pages/game/timer";
     AccountPage,
     TicketsPage,
     GamePage,
-    MarksPage,
+    MarksPage, PartnerDetailPage,
     PrizesPage, PrizeDetailPage,
     BagPage
   ],

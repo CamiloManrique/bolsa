@@ -51,7 +51,7 @@ export class ServicePartners {
   }
 
 
-  selectPartner(id:any){
+    selectPartner(id:any){
 
     this.data = null;
 
