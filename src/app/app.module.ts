@@ -16,11 +16,12 @@ import {Sponsor, SponsorComponent} from "../pages/marks/sponsor";
 import {La14Service} from "../providers/la14api.service";
 import {AccountForm} from "../pages/account/account-form";
 import {ServiceUsers} from "../providers/service-users";
-import {QuestionComponent} from "../pages/game/questions";
+import {QuestionComponent} from "../pages/game/question";
 import {MainMenu} from "../pages/game/main-menu";
 import {GameContent} from "../pages/game/content";
 import {RaffleComponent} from "../pages/raffle/raffle-item";
 import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
+import {Timer} from "../pages/game/timer";
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
     RafflePage,RaffleComponent,
     AccountPage, AccountForm,
     TicketsPage,
-    GamePage, MainMenu, GameContent, QuestionComponent,
+    GamePage, MainMenu, GameContent, QuestionComponent, QuestionComponent, Timer,
     MarksPage, SponsorComponent,
     PrizesPage, PrizeDetailPage,
     BagPage

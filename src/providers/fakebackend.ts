@@ -1,4 +1,4 @@
-import {Question} from "../pages/game/questions";
+import {Question} from "../pages/game/question";
 /**
  * Created by Administrador on 23/02/2017.
  */
@@ -32,16 +32,16 @@ export const Questions: Question[] = [
     new Question(
         "¿Cuanto es 2 + 2 ?",
         ["1", "3", "4", "10"],
-        3
+        2
     ),
     new Question(
         "¿Quien es el más vagal de EME?",
         ["Camilo", "Juanito", "Juan David", "David"],
-        2
+        1
     ),
     new Question(
         "¿Se entregará la app de la 14 a tiempo?",
         ["Si", "No", "Tal vez", "Ninguna de las anteriores"],
-        4
+        3
     )
 ];
