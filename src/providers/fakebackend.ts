@@ -28,6 +28,12 @@ export const Raffles: any[] = [
     ]}
 ];
 
+export const Tickets: any[] = [
+    {number:"23894566", "valid":"Abril"},
+    {number:"23892133", "valid":"Julio"},
+    {number:"31324566", "valid":"Noviembre"},
+];
+
 export const Questions: Question[] = [
     new Question(
         "¿A qué se le llama \"No potable\"?",

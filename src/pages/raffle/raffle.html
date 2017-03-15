@@ -15,9 +15,17 @@
 
 <ion-content padding>
 
-  <ion-row *ngFor="let raffle_item of la14.raffles">
-    <raffle-item [raffle]="raffle_item"></raffle-item>
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8><img width="150%" src='img/change.png' /></ion-col>
+    <ion-col col-2></ion-col>
   </ion-row>
+
+  <ion-list>
+    <ion-item *ngFor="let raffle_item of la14.raffles">
+      <raffle-item [raffle]="raffle_item"></raffle-item>
+    </ion-item>
+  </ion-list>
 
 
 </ion-content>

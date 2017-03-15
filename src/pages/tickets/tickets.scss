@@ -1,3 +1,12 @@
 page-tickets {
 
+  ticket-component{
+    p{
+      color: $primary-gray;
+      span{
+        color: $primary-red;
+      }
+    }
+  }
+
 }

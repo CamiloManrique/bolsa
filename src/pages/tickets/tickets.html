@@ -15,4 +15,19 @@
 
 <ion-content padding>
 
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8><img width="150%" src='img/change.png' /></ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let item of tickets">
+    <ion-col col-12>
+      <ticket-component [ticket]="item"></ticket-component>
+    </ion-col>
+  </ion-row>
+
+
+
+
 </ion-content>

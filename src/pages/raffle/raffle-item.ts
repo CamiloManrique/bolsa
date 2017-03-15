@@ -22,12 +22,31 @@ export function raffleGenerator(object: any): Raffle{
     selector:"raffle-item",
     inputs:["raffle"],
     template: `
-        <h6>{{raffle.time}}</h6>
-        <p *ngFor="let winner of raffle.winners">{{winner.name}} : {{winner.prize}}</p>
+        <h4> Fecha de sorteo: {{formatDate(raffle.time)}}</h4>
+        <h4>Ganadores:</h4>
+
+        <p *ngFor="let winner of raffle.winners"><span>{{winner.name}}:</span> {{winner.prize}}</p>
+
     `
 })
 export class RaffleComponent{
     raffle: Raffle;
+
+    formatDate(date) {
+    var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+    ];
+
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return day+"/"+monthIndex+"/"+year;
+}
+
 }
 
 export class Raffle{

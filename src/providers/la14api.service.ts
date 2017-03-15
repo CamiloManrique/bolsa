@@ -3,9 +3,10 @@
  */
 import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
-import {Online, Users, Raffles} from "./fakebackend";
+import {Online, Users, Raffles, Tickets} from "./fakebackend";
 //import {Sponsor, sponsorGenerator} from "../pages/marks/sponsor";
 import {Raffle, raffleGenerator} from "../pages/raffle/raffle-item";
+import {Ticket, ticketGenerator} from "../pages/tickets/ticket-item";
 
 
 //Modificar por las variables reales
@@ -24,8 +25,9 @@ export class Userdata{
 export class La14Service{
 
     userdata: Userdata;
-    //ponsors: Sponsor[];
+    //sponsors: Sponsor[];
     raffles: Raffle[];
+    tickets: Ticket[];
 
     constructor(
         private http: Http
@@ -62,8 +64,22 @@ export class La14Service{
         */
     }
 
-    getUserPoints(): number {
-        return this.userdata.points;
+    getTickets(): Promise<boolean> {
+
+        return new Promise((resolve, reject) => {
+            let self = this;
+            setTimeout(function () {
+                let tmp_tickets: Ticket[] = [];
+                for(let t of Tickets){
+                    tmp_tickets.push(ticketGenerator(t));
+                }
+
+                self.tickets = tmp_tickets;
+                resolve(true);
+            }, 1000);
+
+        })
+
     }
 
     updateUserPoints(points) : Promise<any> {
