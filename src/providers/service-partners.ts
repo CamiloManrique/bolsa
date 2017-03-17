@@ -11,16 +11,28 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ServicePartners {
 
-  data:any
+  partners: Array<{partner_id: string, partner_nomb: string, partner_img: string}>;
+  //data:any
 
   constructor(public http: Http) {
     //console.log('Hello ServicePartners Provider');
-    this.data = null;
+    //this.data = null;
+    this.partners = null;
   }
 
-  selectPartners(page:any){
+  selectPartners(){
 
-    this.data = null;
+    this.partners = [
+      { partner_id: '1', partner_nomb:'Nutresa', partner_img: 'img/Grupo-Nutresa-01.png'},
+      { partner_id: '2', partner_nomb:'Nutresa', partner_img: 'img/Grupo-Nutresa-01.png'},
+      { partner_id: '3', partner_nomb:'Nutresa', partner_img: 'img/Grupo-Nutresa-01.png'},
+      { partner_id: '4', partner_nomb:'Nutresa', partner_img: 'img/Grupo-Nutresa-01.png'},
+      { partner_id: '5', partner_nomb:'Nutresa', partner_img: 'img/Grupo-Nutresa-01.png'}
+    ];
+
+    return this.partners;
+
+    /*this.data = null;
 
     return new Promise((resolve, reject) =>{
 
@@ -33,7 +45,39 @@ export class ServicePartners {
           headers: myHeader
       });
 
-      this.http.get('http://localhost/aplicacion/index.php/Partners/getAll/'+page,options)
+      this.http.get('http://pruebas.emefectivas.com/aplicacion/index.php/Partners/getAll/'+page,options)
+      .map(res => res.json())
+      .subscribe(data => {
+
+          this.data = data;
+          resolve(this.data);
+
+      },
+      error => {reject(error)}
+      );
+
+    });*/
+
+
+
+  }
+
+
+    /*selectPartner(id:any){
+
+    this.data = null;
+
+    return new Promise((resolve, reject) =>{
+
+      let myHeader = new Headers({
+        "Content-Type":"text/html; charset=UTF-8"
+      });
+
+      let options = new RequestOptions({
+          headers: myHeader
+      });
+
+      this.http.get('http://pruebas.emefectivas.com/aplicacion/index.php/Partners/getPartner/'+id,options)
       .map(res => res.json())
       .subscribe(data => {
 
@@ -48,39 +92,7 @@ export class ServicePartners {
 
 
 
-  }
-
-
-    selectPartner(id:any){
-
-    this.data = null;
-
-    return new Promise((resolve, reject) =>{
-
-      let myHeader = new Headers({
-        "Content-Type":"text/html; charset=UTF-8"
-      });
-
-      let options = new RequestOptions({
-          headers: myHeader
-      });
-
-      this.http.get('http://localhost/aplicacion/index.php/Partners/getPartner/'+id,options)
-      .map(res => res.json())
-      .subscribe(data => {
-
-          this.data = data;
-          resolve(this.data);
-
-      },
-      error => {reject(error)}
-      );
-
-    });
-
-
-
-  }
+  }*/
 
 
 

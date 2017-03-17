@@ -33,16 +33,16 @@
 
 
 
-<ion-refresher (ionRefresh)="doRefresh($event);">
+<!--<ion-refresher (ionRefresh)="doRefresh($event);">
   <ion-refresher-content>
 
       
     
   </ion-refresher-content>
-</ion-refresher>
+</ion-refresher>-->
 
 <ion-list>
-  <div *ngFor= "let prize of prizes" (click)="itemTapped($event, prize)">
+  <div *ngFor= "let prize of premios" (click)="itemTapped($event, prize)">
   <ion-item>
       <ion-thumbnail item-left> <img src='{{prize.prize_image}}' /></ion-thumbnail> 
       <h6 style="margin-bottom: 0%;">{{prize.prize_nomb}}</h6>
@@ -52,8 +52,8 @@
   </ion-list>
 
 
-  <ion-infinite-scroll (ionInfinite)="doRefresh($event)">
+  <!--<ion-infinite-scroll (ionInfinite)="doRefresh($event)">
    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  </ion-infinite-scroll>-->
 
 </ion-content>

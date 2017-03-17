@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar *ngIf="prizeItemSelected">
-  <ion-title>{{prizeItemSelected[0].prize_nomb}}</ion-title>
+  <ion-title>{{prizeItemSelected.prize_nomb}}</ion-title>
   </ion-navbar>
 
 
@@ -19,14 +19,14 @@
 
   <ion-card *ngIf="prizeItemSelected">
 
-    <img src="{{prizeItemSelected[0].prize_image}}"/>
+    <img src="{{prizeItemSelected.prize_image}}"/>
 
     <ion-card-content>
       <ion-card-title id="title" align="center">
-        {{prizeItemSelected[0].prize_nomb}}
+        {{prizeItemSelected.prize_nomb}}
       </ion-card-title>
       <p>
-        {{prizeItemSelected[0].prize_desc}}
+        {{prizeItemSelected.prize_desc}}
       </p>
     </ion-card-content>
 

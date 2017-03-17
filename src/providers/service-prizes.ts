@@ -10,16 +10,35 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class ServicePrizes {
-  data: any
+  premios: Array<{prize_id: string, prize_nomb: string, prize_desc: string, prize_image: string, prize_points: string}>;
 
   constructor(public http: Http) {
     //console.log('Hello ServicePrizes Provider');
-    this.data = null;
+    this.premios = null;
   }
 
 
 
-  selectPrizes(page:any){
+
+  selectPrizes(){
+
+    this.premios = [
+      { prize_id: '1', prize_nomb:'Lavadora', prize_desc: 'Lavadora automatica que puede secar la ropa',prize_image: 'img/lavadora-lg-9kg-19lb-inox-carga-superior-wf-t7005tp-01.jpg', prize_points: '11'},
+      { prize_id: '2', prize_nomb:'Nevera', prize_desc: 'Nevera para congelar',prize_image: 'img/nevera.jpeg', prize_points: '22'},
+      { prize_id: '3', prize_nomb:'Estufa', prize_desc: 'Estufa para cocinar',prize_image: 'img/mabe_estufa_76cm_silver_ma07630ci0_frente.jpg', prize_points: '4'},
+      { prize_id: '4', prize_nomb:'Equipo de Sonido', prize_desc: 'Equipo de sonido para sonidos',prize_image: 'img/EQUIPO%20DE%20SONIDO.jpg', prize_points: '30'},
+      { prize_id: '5', prize_nomb:'Teatro en Casa', prize_desc: 'Teatro en cas para peliculas',prize_image: 'img/large01.jpg', prize_points: '2'},
+      { prize_id: '6', prize_nomb:'DVD LG', prize_desc: 'DVD Para Pelis',prize_image: 'img/reproductor-DVD-DP132-450x370-4.jpg', prize_points: '11'}
+    ];
+
+    return this.premios;
+
+  }
+
+
+
+
+  /*selectPrizes(page:any){
 
     this.data = null;
 
@@ -36,7 +55,7 @@ export class ServicePrizes {
           headers: myHeader
       });
 
-      this.http.get('http://localhost/aplicacion/index.php/Prizes/getAll/'+page,options)
+      this.http.get('http://pruebas.emefectivas.com/aplicacion/index.php/Prizes/getAll/'+page,options)
       .map(res => res.json())
       .subscribe(data => {
 
@@ -51,13 +70,13 @@ export class ServicePrizes {
 
 
 
-  }
+  }*/
 
 
 
 
 
-    selectPrize(id:any){
+    /*selectPrize(id:any){
 
     this.data = null;
 
@@ -71,7 +90,7 @@ export class ServicePrizes {
           headers: myHeader
       });
 
-      this.http.get('http://localhost/aplicacion/index.php/Prizes/getPrize/'+id,options)
+      this.http.get('http://pruebas.emefectivas.com/aplicacion/index.php/Prizes/getPrize/'+id,options)
       .map(res => res.json())
       .subscribe(data => {
 
@@ -86,7 +105,7 @@ export class ServicePrizes {
 
 
 
-  }
+    }*/
 
 
 

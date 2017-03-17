@@ -41,14 +41,16 @@ import {PrizeDetailPage} from '../prize-detail/prize-detail';
   providers: [ServicePrizes]
 })
 export class PrizesPage {
-   page: any;
-   prizes: any;
+   //page: any;
+   //prizes: any;
+   premios: Array<{prize_id: string, prize_nomb: string, prize_desc: string, prize_image: string}>;
    prize: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public prizesServices:ServicePrizes,public toastCtrl:ToastController) {
 
-    this.page = 20;
-    this.doRefresh(0);
+    //this.page = 20;
+    //this.doRefresh(0);
+    this.premios = this.selectPrizes();
 
   }
 
@@ -56,10 +58,17 @@ export class PrizesPage {
     console.log('ionViewDidLoad PrizesPage');
   }
 
+  selectPrizes(){
+    return this.prizesServices.selectPrizes();
+    
+  }
+
 
   itemTapped(event, prize) {
 
-    let id = prize.prize_id;
+    this.navCtrl.push(PrizeDetailPage,{prize});
+    
+    /*let id = prize.prize_id;
 
     this.prizesServices.selectPrize(id).then(
         data =>{
@@ -67,19 +76,19 @@ export class PrizesPage {
         this.navCtrl.push(PrizeDetailPage,{prize:this.prize});
       }).catch(error=>{
         this.errorToast();
-      });
+      });*/
    
   }
 
-   errorToast() {
+   /*errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Error de conexión, por favor compruebe su conexión a internet.',
       duration: 3000
     });
     toast.present();
-  }
+   }*/
 
-  doRefresh(refresher){
+  /*doRefresh(refresher){
       
       this.prizesServices.selectPrizes(this.page).then(
 
@@ -94,6 +103,6 @@ export class PrizesPage {
         this.errorToast();
       });
 
-    };
+  };*/
 
 }

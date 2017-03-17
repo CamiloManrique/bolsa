@@ -23,7 +23,7 @@ export class MarksPage{
   constructor(public navCtrl: NavController, public navParams: NavParams,public partnerServices:ServicePartners,public toastCtrl:ToastController) {  
 
     this.page = 10;
-    this.doRefresh(0);
+    this.partners = this.doRefresh();
 
   }
 
@@ -33,7 +33,9 @@ export class MarksPage{
 
   itemTapped(event, partner) {
 
-    let id = partner.partner_id;
+    this.navCtrl.push(PartnerDetailPage,{partner});
+
+    /*let id = partner.partner_id;
 
     this.partnerServices.selectPartner(id).then(
         data =>{
@@ -41,7 +43,7 @@ export class MarksPage{
         this.navCtrl.push(PartnerDetailPage,{partner:this.partner});
       }).catch(error=>{
         this.errorToast();
-      });
+      });*/
    
   }
 
@@ -53,9 +55,12 @@ export class MarksPage{
     toast.present();
   }
 
-  doRefresh(refresher){
+  doRefresh(){
       
-      this.partnerServices.selectPartners(this.page).then(
+
+    return this.partnerServices.selectPartners();
+
+     /* this.partnerServices.selectPartners(this.page).then(
 
         data =>{
         this.partners = data;
@@ -66,7 +71,7 @@ export class MarksPage{
 
       }).catch(error=>{
         this.errorToast();
-      });
+      });*/
 
     };
 

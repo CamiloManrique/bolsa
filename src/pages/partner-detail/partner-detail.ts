@@ -15,7 +15,7 @@ import {ServicePrizes} from '../../providers/service-prizes';
 export class PartnerDetailPage {
 
   page: any;
-  prizes: any;
+  prizes: Array<{prize_id: string, prize_nomb: string, prize_desc: string, prize_image: string, prize_points: string}>;
   prize: any;
   partnerItemSelected:any;
 
@@ -23,7 +23,7 @@ export class PartnerDetailPage {
 
       this.partnerItemSelected = this.navParams.get('partner');
       this.page = 20;
-      this.doRefresh(0);
+      this.doRefresh();
 
   }
 
@@ -36,9 +36,10 @@ export class PartnerDetailPage {
     toast.present();
   }
 
-  doRefresh(refresher){
+  doRefresh(){
       
-      this.prizesServices.selectPrizes(this.page).then(
+      this.prizes = this.prizesServices.selectPrizes();
+      /*this.prizesServices.selectPrizes(this.page).then(
 
         data =>{
         this.prizes = data;
@@ -49,10 +50,9 @@ export class PartnerDetailPage {
 
       }).catch(error=>{
         this.errorToast();
-      });
+      });*/
 
     };
-
 
 
 

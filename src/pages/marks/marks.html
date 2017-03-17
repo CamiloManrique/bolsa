@@ -21,10 +21,10 @@
 
 <ion-content padding>
 
-  <ion-refresher (ionRefresh)="doRefresh($event);">
+  <!--<ion-refresher (ionRefresh)="doRefresh($event);">
   <ion-refresher-content>
   </ion-refresher-content>
-  </ion-refresher>
+  </ion-refresher>-->
 
   <ion-list>
   <div *ngFor= "let partner of partners" (click)="itemTapped($event, partner)">
@@ -37,8 +37,8 @@
   </ion-list>
 
 
-  <ion-infinite-scroll (ionInfinite)="doRefresh($event)">
+  <!--<ion-infinite-scroll (ionInfinite)="doRefresh($event)">
    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  </ion-infinite-scroll>-->
 
 </ion-content>
