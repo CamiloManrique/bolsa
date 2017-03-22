@@ -22,7 +22,7 @@ export class MyApp {
 
   // make LoginPage the root (or first) page
   rootPage: any = LoginPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any,imagen:string}>;
 
   constructor(
     public platform: Platform,
@@ -32,14 +32,13 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Sorteos', component: RafflePage },
-      { title: 'Opciones', component: AccountPage },
-      { title: 'Boletas', component: TicketsPage },
-      { title: 'Jugar', component: GamePage },
-      { title: 'Patrocinadores', component: MarksPage },
-      { title: 'Premios', component: PrizesPage },
-      { title: 'La Bolsa', component: BagPage},
-      { title: 'Cerrar Sesión', component: LoginPage }
+      { title: 'Sorteos', component: RafflePage, imagen: 'img/icons/1.png' },
+      { title: 'Mi Cuenta', component: AccountPage, imagen: 'img/icons/2.png' },
+      { title: 'Boletas', component: TicketsPage,  imagen: 'img/icons/3.png' },
+      { title: 'Jugar', component: GamePage,  imagen: 'img/icons/4.png' },
+      { title: 'Patrocinadores', component: MarksPage, imagen: 'img/icons/5.png' },
+      { title: 'Premios', component: PrizesPage, imagen: 'img/icons/6.png' },
+      { title: 'La Bolsa', component: BagPage,  imagen: 'img/icons/7.png'}
     ];
   }
 
@@ -47,7 +46,7 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.isVisible = false;
+      StatusBar.backgroundColorByName("primary-green");
       Splashscreen.hide();
     });
   }

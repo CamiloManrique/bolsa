@@ -12,13 +12,23 @@ import {Component} from "@angular/core";
         <ion-list>
 
           <ion-item>
-            <ion-label> Nombre </ion-label>
+            <ion-label floating>No. de Cédula</ion-label>
+            <ion-input type="number" disabled [formControl]="formulario.controls['cedula']" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating> Nombre </ion-label>
             <ion-input input type="text" disabled [formControl]="formulario.controls['nombre']"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label floating>No. de Cédula</ion-label>
-            <ion-input type="number" [formControl]="formulario.controls['cedula']" required></ion-input>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text" disabled [formControl]="formulario.controls['email']" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Telefono</ion-label>
+            <ion-input type="text" disabled [formControl]="formulario.controls['telefono']" required></ion-input>
           </ion-item>
 
           <ion-item>
@@ -28,8 +38,8 @@ import {Component} from "@angular/core";
         </ion-list>
 
 
-        <div padding>
-          <button ion-button color="danger" block type="submit" [disabled]="!formulario.valid">Guardar cambios</button>
+        <div>
+          <button ion-button color="danger" block type="submit" [disabled]="!formulario.valid">Cerrar Sesión</button>
         </div>
 
       </form>
@@ -41,9 +51,12 @@ export class AccountForm {
     formulario:FormGroup;
     constructor(fb:FormBuilder, val:CustomValidators) {
         this.formulario = fb.group({
-            "nombre": ["Camilo"],
-            "cedula": ["", Validators.compose([
+            "nombre": ["Juan David Marcillo"],
+            "email": ["juan.david_m@hotmail.com"],
+            "telefono": ["315 526 9431"],
+            "cedula": ["1107507086", Validators.compose([
                 Validators.required, val.cedulaValidator])
+                
             ]
         })
     }
