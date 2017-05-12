@@ -23,6 +23,8 @@ import {PrizeDetailPage} from "../pages/prize-detail/prize-detail";
 import {PartnerDetailPage} from "../pages/partner-detail/partner-detail";
 import {Timer} from "../pages/game/timer";
 import {TicketComponent} from "../pages/tickets/ticket-item";
+import {RegisterPage} from "../pages/register/register";
+import {FirstTimePage} from "../pages/first-time/first-time";
 
 
 @NgModule({
@@ -32,13 +34,18 @@ import {TicketComponent} from "../pages/tickets/ticket-item";
     LoginForm,
     BienvenidaPage,
     HomePage,
-    RafflePage,RaffleComponent,
-    AccountPage, AccountForm,
-    TicketsPage, TicketComponent,
+    RafflePage,
+    RaffleComponent,
+    AccountPage, 
+    AccountForm,
+    TicketsPage, 
+    TicketComponent,
     GamePage, MainMenu, GameContent, QuestionComponent, QuestionComponent, Timer,
     MarksPage, PartnerDetailPage,
     PrizesPage, PrizeDetailPage,
-    BagPage
+    BagPage,
+    RegisterPage,
+    FirstTimePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -55,7 +62,7 @@ import {TicketComponent} from "../pages/tickets/ticket-item";
     GamePage,
     MarksPage, PartnerDetailPage,
     PrizesPage, PrizeDetailPage,
-    BagPage
+    BagPage,RegisterPage,FirstTimePage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

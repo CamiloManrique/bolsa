@@ -20,19 +20,23 @@ function cedulaValidator(control: FormControl): {[s: string]:boolean}{
   selector:'login-form',
   template:`
       <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
-        <ion-list>
+        
 
           <ion-item>
-            <ion-label floating>No. de Cédula</ion-label>
-            <ion-input type="number" [formControl]="formulario.controls['cedula']" required></ion-input>
+            <ion-input type="text" placeholder="Usuario" [formControl]="formulario.controls['usuario']"></ion-input>
           </ion-item>
 
-        </ion-list>
-        
-        <p style="color:red" *ngIf="formulario.controls['cedula'].hasError('cedulaInvalida') && formulario.controls['cedula'].touched">Número de cedula no valido</p>
+          <ion-item>
+            <ion-input type="password" placeholder="Contraseña" [formControl]="formulario.controls['contrasena']"></ion-input>
+          </ion-item>
+
+       
+        <div padding>
+        <p style="color:red" *ngIf="formulario.controls['usuario'].hasError('cedulaInvalida') && formulario.controls['usuario'].touched">Número de cedula no valido</p>
+        </div>
 
         <div padding>
-          <button ion-button color="danger" block type="submit" [disabled]="!formulario.valid">Ingresar</button>
+          <button ion-button color="primary-green" block type="submit" [disabled]="!formulario.valid">Ingresar</button>
         </div>
 
       </form>
@@ -46,9 +50,10 @@ export class LoginForm{
   isActive: boolean;
   constructor(fb: FormBuilder,private userService:ServiceUsers,public navCtrl: NavController, public alertCtrl: AlertController, public toastCtrl:ToastController){
       this.formulario = fb.group({
-      "cedula":["", Validators.compose([
-          Validators.required, cedulaValidator ])
-      ]
+      "usuario":["", Validators.compose([
+          Validators.required, cedulaValidator ])],
+      "contrasena":["", Validators.compose([
+          Validators.required])]
     })
   
   }
