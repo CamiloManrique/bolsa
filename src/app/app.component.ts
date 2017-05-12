@@ -12,6 +12,7 @@ import { GamePage } from '../pages/game/game';
 import { MarksPage } from '../pages/marks/marks';
 import { PrizesPage } from '../pages/prizes/prizes';
 import { BagPage } from '../pages/bag/bag';
+import { HomePage } from '../pages/home/home';
 
 
 

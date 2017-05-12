@@ -23,3 +23,14 @@ $primary-red: #E24B65;
 .center{
   text-align: center;
 }
+
+
+ion-content.padd{
+    div.scroll-content{
+        overflow-y: hidden !important;
+        margin-top: 0% !important;
+    }
+    div.top{
+        margin-top: -13% !important;
+    }
+}

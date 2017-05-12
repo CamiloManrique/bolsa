@@ -25,6 +25,7 @@ import {Timer} from "../pages/game/timer";
 import {TicketComponent} from "../pages/tickets/ticket-item";
 import {RegisterPage} from "../pages/register/register";
 import {FirstTimePage} from "../pages/first-time/first-time";
+import {ElasticHeaderHome} from "../components/elastic-header-home/elastic-header-home";
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {FirstTimePage} from "../pages/first-time/first-time";
     PrizesPage, PrizeDetailPage,
     BagPage,
     RegisterPage,
-    FirstTimePage
+    FirstTimePage,
+    ElasticHeaderHome
   ],
   imports: [
     IonicModule.forRoot(MyApp)

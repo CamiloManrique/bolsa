@@ -6,6 +6,7 @@ page-first-time {
         align-items: center !important;
     }
 
+
     button.green{
       width: 80%;
       padding: 4%;
@@ -20,6 +21,7 @@ page-first-time {
     button.red{
       width: 80%;
       padding: 4%;
+      margin-top: -6%;
       border-radius: 30px;
       background-color: white !important;
       border: 2px $primary-red solid;

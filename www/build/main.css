@@ -28948,6 +28948,15 @@ sub {
   text-align: center;
 }
 
+ion-content.padd div.scroll-content {
+  overflow-y: hidden !important;
+  margin-top: 0% !important;
+}
+
+ion-content.padd div.top {
+  margin-top: -13% !important;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -28988,6 +28997,7 @@ page-first-time button.green {
 page-first-time button.red {
   width: 80%;
   padding: 4%;
+  margin-top: -6%;
   border-radius: 30px;
   background-color: white !important;
   border: 2px #E24B65 solid;
@@ -29068,7 +29078,7 @@ page-game timer .inner {
   height: 100%;
 }
 
-.video-container {
+page-home .video-container {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
@@ -29076,12 +29086,85 @@ page-game timer .inner {
   overflow: hidden;
 }
 
-.video-container iframe, .video-container object, .video-container embed {
+page-home .video-container iframe, page-home .video-container object, page-home .video-container embed {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+page-home .background-image {
+  background-image: url("../img/logoPrime.png");
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 65vw;
+}
+
+page-home button.white {
+  width: 80%;
+  padding: 4%;
+  border-radius: 30px;
+  background-color: white !important;
+  border: 2px white solid;
+  text-align: center !important;
+  font-size: 20px;
+  color: #99BF12;
+}
+
+page-home p {
+  text-align: justify;
+}
+
+page-home .main-content {
+  width: 100%;
+  height: 140%;
+  color: white;
+  background-color: #99BF12;
+  position: absolute;
+}
+
+page-home .main-content div .normal {
+  font-weight: normal;
+}
+
+page-home .main-content div .bold {
+  font-weight: bold;
+}
+
+page-home .main-content div h5 {
+  text-align: center;
+}
+
+page-home .main-content div h6.separator {
+  height: 10px !important;
+  text-align: center;
+  color: #99BF12;
+}
+
+page-home .main-content div h6.separator div {
+  display: inline-block;
+  position: relative;
+  background-color: #99BF12;
+  width: 13%;
+  z-index: 2;
+  top: -20px;
+}
+
+page-home .main-content div h6.separator div span {
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 21px;
+  width: 69%;
+  background-color: white;
+}
+
+page-home .main-content div h6.separator hr {
+  position: relative;
+  width: 45%;
+  background-color: white;
+  z-index: 1;
 }
 
 page-marks .sponsor {
