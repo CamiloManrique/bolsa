@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {LoginPage} from '../login/login';
 
+
 /*
   Generated class for the FirstTime page.
 
@@ -23,5 +24,6 @@ export class FirstTimePage {
   onGoToLogin(){
     this.navCtrl.push(LoginPage);
   }
+
 
 }

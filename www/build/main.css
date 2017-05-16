@@ -28983,6 +28983,14 @@ page-first-time .center {
   align-items: center !important;
 }
 
+page-first-time .bottom-limit {
+  margin-bottom: -16px !important;
+}
+
+page-first-time .bottom-button {
+  margin-bottom: -6px;
+}
+
 page-first-time button.green {
   width: 80%;
   padding: 4%;
@@ -29185,8 +29193,20 @@ page-marks .sponsor .sponsor-label {
   color: #15c899;
 }
 
-#title {
+page-prize-detail .center {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+page-prize-detail #title {
   color: #15c899;
+}
+
+page-prizes .center {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 
 page-raffle raffle-item span {
